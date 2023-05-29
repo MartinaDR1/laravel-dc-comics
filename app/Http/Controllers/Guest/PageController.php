@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Comic;
+use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
@@ -12,14 +12,18 @@ class PageController extends Controller
     {
         $banner = config('app_banner_links');
         $footer = config('app_footer_links');
-        return view('home',compact('banner','footer'));
+        return view('home', compact('banner','footer'));
     }
     public function comics()
-    {
-        $comics = config('db');
+    {    
+        $comics = Comic::all();
         $banner = config('app_banner_links');
         $footer = config('app_footer_links');
         return view('comics', compact('comics','banner','footer'));
     }
 
+    public function comic(Comic $comic)
+    {
+        return view('comic', compact('comic'));
+    }
 }

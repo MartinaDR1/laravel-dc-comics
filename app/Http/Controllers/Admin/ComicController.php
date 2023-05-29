@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
-use App\Http\Requests\StoreComicRequest;
-use App\Http\Requests\UpdateComicRequest;
+use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
@@ -15,8 +14,8 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $comics = config('db');
+    {  
+        $comics = Comic::orderByDesc('id')->get();
         $banner = config('app_banner_links');
         $footer = config('app_footer_links');
         return view ('admin.comics.index', compact('comics','banner','footer'));
@@ -29,7 +28,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.comics.create');
     }
 
     /**
@@ -50,8 +49,10 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Comic $comic)
-    {
-        //
+    {   
+        $banner = config('app_banner_links');
+        $footer = config('app_footer_links');
+        return view('admin.comics.show', compact('comic','banner','footer'));
     }
 
     /**
