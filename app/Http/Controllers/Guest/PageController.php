@@ -24,6 +24,8 @@ class PageController extends Controller
 
     public function comic(Comic $comic)
     {
-        return view('comic', compact('comic'));
+        $banner = config('app_banner_links');
+        $footer = config('app_footer_links');
+        return view('comic', compact('comic','banner','footer'));
     }
 }

@@ -3,6 +3,10 @@
 @section('content')
 
 <div class="container">
+    <div class="d-flex justify-content-between my-3">
+        <h3>Comincs-List</h3>
+        <a name="" id="" class="btn btn-primary" href="{{route('comics.create')}}" role="button">+</a>
+    </div>
     <table class="table">
         <thead>
             <tr>

@@ -28,7 +28,9 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('admin.comics.create');
+        $banner = config('app_banner_links');
+        $footer = config('app_footer_links');
+        return view('admin.comics.create', compact('banner','footer'));
     }
 
     /**
@@ -37,9 +39,20 @@ class ComicController extends Controller
      * @param  \App\Http\Requests\StoreComicRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreComicRequest $request)
+    public function store(Request $request)
     {
-        //
+        $comic = new Comic();
+
+        $comic->title = $request->title;
+        $comic->description= $request->description;
+        $comic->thumb= $request->thumb;
+        $comic->price= $request->price;
+        $comic->series= $request->series;
+        $comic->sale_date= $request->sale_date;
+        $comic->type= $request->type;
+        $comic->save();
+
+        return to_route('comics.index');
     }
 
     /**
