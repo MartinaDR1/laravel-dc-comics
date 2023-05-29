@@ -1,1 +1,76 @@
 @import '~bootstrap/scss/bootstrap';
+
+@import '~bootstrap/scss/bootstrap';
+
+$primary:#ffffff;
+$dark: #1c1c1c;
+$accent: #0282f9;
+$light: #787879;
+
+.bg_price{
+    background-color: #55ba59;
+}
+
+.txt_price{
+    color: #91e77f;
+}
+
+//Header
+.top_header{
+    height: 25px;
+
+    li{
+        font-size: 12px;
+    }
+}
+.searchBar{
+    width: 110px;
+    border-bottom:  1px solid $accent;
+}
+
+.active{
+    color: $accent ;
+    border-bottom: 4px solid $accent;
+}
+
+//Jumbo
+.jumbotron{
+    height: 400px;
+    background-image: url(../img/jumbotron.jpg);
+    background-size: cover;
+}
+
+.blue_banner{
+    height: 60px;
+
+    position: relative;
+
+    .cover{
+        position: absolute;
+        top: -160px;
+        left: 0;
+    }
+}
+
+//Comics
+.container{
+    position: relative;
+
+    .current_series{
+        position: absolute;
+        top: -28px;
+        left: -6px;
+    
+    }
+}
+.card img{
+    max-height: 160px;
+}
+
+//Footer
+.footer_top{
+    background-image: url('../img/dc-logo-bg.png'), url('../img/footer-bg.jpg');
+    background-repeat: no-repeat, repeat-x;
+    background-position: 70% 50%;
+}
+
