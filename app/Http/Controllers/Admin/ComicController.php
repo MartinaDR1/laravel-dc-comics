@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
+use App\Http\Requests\UpdateComicRequest;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -76,7 +77,9 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        $banner = config('app_banner_links');
+        $footer = config('app_footer_links');
+        return view ('admin.comics.edit', compact('comic','banner','footer'));
     }
 
     /**
@@ -88,7 +91,19 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        //
+        $data=[
+            'title' => $request-> title,
+            'description' => $request->description,
+            'thumb' => $request->thumb,
+            'price' => $request->price,
+            'series' => $request->series,
+            'sale_date' => $request->sale_date,
+            'type' => $request->type,
+        ];
+
+        $comic -> update($data);
+    
+        return to_route('comics.index');
     }
 
     /**

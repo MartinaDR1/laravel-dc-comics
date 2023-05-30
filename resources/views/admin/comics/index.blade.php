@@ -35,7 +35,7 @@
                     <a href="{{route('comics.show',$comic['id'])}}" title="View" class="text-decoration-none">
                         <i class="fas fa-eye fa-sm fa-fw"></i>
                     </a>
-                    <a href="" title="Edit" class="text-decoration-none">
+                    <a href="{{route('comics.edit',$comic['id'])}}" title="Edit" class="text-decoration-none">
                         <i class="fas fa-pencil fa-sm fa-fw"></i>
                     </a>
                     <a href="" title="Delete" class="text-decoration-none">
