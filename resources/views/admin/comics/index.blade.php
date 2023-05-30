@@ -38,10 +38,13 @@
                     <a href="{{route('comics.edit',$comic['id'])}}" title="Edit" class="text-decoration-none">
                         <i class="fas fa-pencil fa-sm fa-fw"></i>
                     </a>
-                    <a href="" title="Delete" class="text-decoration-none">
-                        <i class="fas fa-trash fa-sm fa-fw"></i>
-                    </a>
-
+                    <form action="{{route('comics.destroy', $comic->id)}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <a href="" title="Delete" class="text-decoration-none">
+                            <i class="fas fa-trash fa-sm fa-fw"></i>
+                        </a>
+                    </form>
                 </td>
                
             </tr>
