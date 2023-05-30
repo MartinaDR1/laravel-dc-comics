@@ -38,6 +38,7 @@ $light: #787879;
     height: 400px;
     background-image: url(../img/jumbotron.jpg);
     background-size: cover;
+    position: relative;
 }
 
 .blue_banner{
@@ -50,6 +51,12 @@ $light: #787879;
         top: -160px;
         left: 0;
     }
+}
+
+#btn_findOut{
+    position: absolute;
+    top: -3rem;
+    right: 0;
 }
 
 //Comics
@@ -67,10 +74,17 @@ $light: #787879;
     max-height: 160px;
 }
 
+.card:hover{
+    transform: scale(1.2)
+}
 //Footer
 .footer_top{
     background-image: url('../img/dc-logo-bg.png'), url('../img/footer-bg.jpg');
     background-repeat: no-repeat, repeat-x;
     background-position: 70% 50%;
+
+    a:hover{
+        border-bottom: 1px solid $accent;
+    }
 }
 
