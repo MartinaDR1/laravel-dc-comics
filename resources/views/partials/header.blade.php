@@ -21,7 +21,7 @@
                 <nav class="nav text-uppercase text-black">
                     <a class="nav-link {{ Route::currentRouteName() === 'home' ? 'active' : '' }}" href="{{ route('home') }}">Characters</a>
                     <a class="nav-link {{ Route::currentRouteName() === 'comics' ? 'active' : '' }}" href="{{ route('comics') }}">Comics</a>
-                    <a name="" id="" class="btn btn-primary" href="{{ route('comics.index') }}" role="button">Admin</a>
+                    <a name="" id="" class="btn text-primary" href="{{ route('comics.index') }}" role="button">Admin</a>
                     
 
                     <div class="input-group mb-3 searchBar">

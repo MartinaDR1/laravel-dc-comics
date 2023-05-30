@@ -4,7 +4,7 @@
 
 <div class="container">
     @include('partials.session_message')
-    
+
     <div class="d-flex justify-content-between my-3">
         <h3>Comincs-List</h3>
         <a name="" id="" class="btn btn-primary" href="{{route('comics.create')}}" role="button">+</a>
@@ -19,6 +19,7 @@
                 <th>Series</th>
                 <th>Sale-date</th>
                 <th>Type</th>
+                <th>Action</th>
             </tr>
         </thead>
 
@@ -33,20 +34,18 @@
                 <td>{{$comic['sale_date'] }}</td>
                 <td>{{$comic['type'] }}</td>
                 <td>
-
-                    <a href="{{route('comics.show',$comic['id'])}}" title="View" class="text-decoration-none">
-                        <i class="fas fa-eye fa-sm fa-fw"></i>
-                    </a>
-                    <a href="{{route('comics.edit',$comic['id'])}}" title="Edit" class="text-decoration-none">
-                        <i class="fas fa-pencil fa-sm fa-fw"></i>
-                    </a>
-                    <form action="{{route('comics.destroy', $comic->id)}}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <a href="" title="Delete" class="text-decoration-none">
-                            <i class="fas fa-trash fa-sm fa-fw"></i>
+                    <button class="btn border-0 bg-transparent"> 
+                        <a href="{{route('comics.show',$comic['id'])}}" title="View" class="text-decoration-none text-success">
+                            <i class="fas fa-eye fa-sm fa-fw"></i>
                         </a>
-                    </form>
+                    </button>
+                    <button class="btn border-0 bg-transparent">
+                        <a href="{{route('comics.edit',$comic['id'])}}" title="Edit" class="text-decoration-none text-warning">
+                            <i class="fas fa-pencil fa-sm fa-fw"></i>
+                        </a>
+                    </button>
+                    
+                    @include('partials.modal')
                 </td>
                
             </tr>
