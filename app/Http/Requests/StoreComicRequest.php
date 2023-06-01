@@ -35,4 +35,18 @@ class StoreComicRequest extends FormRequest
             
         ];
     }
+
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Il titolo deve essere inserito',
+            'description.required' => 'La descrizione deve essere inserita',
+            'thumb.required' => 'L\'immagine deve essere inserita',
+            'price.required' => 'Il prezzo deve essere inserita',
+            'series.required' => 'La serie deve essere inserita',
+            'sale_date.required' => 'La data deve essere inserita',
+            'type.required' => 'Il tipo deve essere inserita',
+        ];
+    }
 }
